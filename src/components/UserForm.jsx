@@ -1,5 +1,4 @@
 import { useState } from "react"
-import NextStepBtn from "./buttons/NextStepBtn"
 import useAccountSetupState from "../zustand/useAccountSetupState";
 
 
@@ -44,7 +43,7 @@ const UserForm = () => {
 
     return (
         <form
-            action={handleNext}
+            // action={handleNext}
             className="relative w-full h-full flex flex-col justify-between sm:px-3 lg:px-16"
         >
             <section className="liftedElement gap-4 sm:gap-6 px-6 py-8 sm:p-0 bg-white">
@@ -103,7 +102,13 @@ const UserForm = () => {
             </section>
 
             <div className="buttonsDiv justify-end bg-white py-4 sm:p-0">
-                <NextStepBtn />
+                <button
+                    // type="submit"
+                    className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--purple-600)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
+                    onClick={() => handleNext()}
+                >
+                    Next Step
+                </button>
             </div>
         </form>
     )

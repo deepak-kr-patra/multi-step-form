@@ -4,6 +4,7 @@ import StepsBar from './components/StepsBar';
 import StepsBarMobile from './components/StepsBarMobile';
 import UserForm from './components/UserForm';
 import SelectPlan from './components/SelectPlan';
+import AddOns from './components/AddOns';
 import useAccountSetupState from './zustand/useAccountSetupState';
 // import useScreenWidth from './zustand/useScreenWidth';
 
@@ -43,32 +44,11 @@ function App() {
         <StepsBar />        {/* visible when screen width >= 640px */}
         <StepsBarMobile />  {/* visible when screen width < 640px */}
         <section id='setupSection' className='flex justify-center items-center p-0 pb-0 lg:px-12 sm:py-2 md:py-6'>
-          {stepNumber === 5 && <UserForm />}
-          {stepNumber === 1 && <SelectPlan />}
+          {stepNumber === 1 && <UserForm />}
+          {stepNumber === 2 && <SelectPlan />}
+          {stepNumber === 3 && <AddOns />}
         </section>
       </main>
-
-      {/* <!-- Step 2 start --> */}
-
-      {/* Select your plan
-      You have the option of monthly or yearly billing.
-
-      Arcade
-      $9/mo
-
-      Advanced
-      $12/mo
-
-      Pro
-      $15/mo
-
-      Monthly
-      Yearly
-
-      Go Back
-      Next Step */}
-
-      {/* <!-- Step 2 end --> */}
 
       {/* <!-- Step 3 start --> */}
 

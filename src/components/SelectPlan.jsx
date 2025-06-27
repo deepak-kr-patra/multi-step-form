@@ -1,13 +1,19 @@
 import useAccountSetupState from "../zustand/useAccountSetupState";
 import BackBtn from "./buttons/BackBtn"
-import NextStepBtn from "./buttons/NextStepBtn"
 import MonthlyPlanCardsSection from "./MonthlyPlanCardsSection";
 import YearlyPlanCardsSection from "./YearlyPlanCardsSection";
 
 
 const SelectPlan = () => {
 
-    const { subscriptionMode, setSubscriptionMode } = useAccountSetupState();
+    const {
+        stepNumber,
+        setStepNumber,
+        subscriptionMode,
+        setSubscriptionMode,
+        selectedPlanID,
+        setSelectedPlanID
+    } = useAccountSetupState();
 
     const toggleMode = () => {
         let toggleButton = document.getElementById('chooseMode');
@@ -23,6 +29,26 @@ const SelectPlan = () => {
             monthlyMode.classList.add('chosenMode');
             setSubscriptionMode("monthly");
         }
+        setSelectedPlanID(null);
+    }
+
+    const selectPlan = (id) => {
+        // let planCards = document.querySelectorAll('.planCard');
+        // planCards.forEach(planCard => planCard.classList.remove('selectedCard'));
+        if (selectedPlanID !== null) {
+            document.getElementById(selectedPlanID).classList.remove('selectedCard');
+        }
+        setSelectedPlanID(id);
+        let selectedPlan = document.getElementById(id);
+        selectedPlan.classList.add('selectedCard');
+    }
+
+    const handleNext = () => {
+        if (selectedPlanID === null) {
+            console.log("select a plan first");
+            return;
+        }
+        setStepNumber(stepNumber + 1);
     }
 
     return (
@@ -36,49 +62,8 @@ const SelectPlan = () => {
                     <p className="stepText">You have the option of monthly or yearly billing.</p>
                 </div>
 
-                {subscriptionMode === "monthly" && <MonthlyPlanCardsSection />}
-                {subscriptionMode === "yearly" && <YearlyPlanCardsSection />}
-
-                {/* <section
-                    // id="planCardsSection"
-                    className="flex flex-col sm:flex-row justify-between gap-4"
-                >
-                    <div className="planCard">
-                        <div className="image-div arcade-image-div"></div>
-                        <div>
-                            <h3 className="font-bold text-[var(--purple-950)]">Arcade</h3>
-                            {
-                                subscriptionMode === "monthly" &&
-                                <p className="text-sm sm:text-[16px] text-[var(--grey-500)]">$9/mo</p>
-                            }
-                            {
-                                subscriptionMode === "yearly" &&
-                                <>
-                                    <p className="text-sm sm:text-[16px] text-[var(--grey-500)]">$90/yr</p>
-                                    <p className="text-xs sm:text-sm text-[var(--blue-950)]">2 months free</p>
-                                </>
-                            }
-                        </div>
-                    </div>
-                    <div className="planCard">
-                        <div className="image-div advanced-image-div"></div>
-                        <div>
-                            <h3 className="font-bold text-[var(--purple-950)]">Advanced</h3>
-                            <p className="text-sm sm:text-[16px] text-[var(--grey-500)]">$12/mo</p>
-                            <p className="text-sm sm:text-[16px] text-[var(--grey-500)]">$120/yr</p>
-                            <p className="text-xs sm:text-sm text-[var(--blue-950)]">2 months free</p>
-                        </div>
-                    </div>
-                    <div className="planCard">
-                        <div className="image-div pro-image-div"></div>
-                        <div>
-                            <h3 className="font-bold text-[var(--purple-950)]">Pro</h3>
-                            <p className="text-sm sm:text-[16px] text-[var(--grey-500)]">$15/mo</p>
-                            <p className="text-sm sm:text-[16px] text-[var(--grey-500)]">$150/yr</p>
-                            <p className="text-xs sm:text-sm text-[var(--blue-950)]">2 months free</p>
-                        </div>
-                    </div>
-                </section> */}
+                {subscriptionMode === "monthly" && <MonthlyPlanCardsSection selectPlan={selectPlan} />}
+                {subscriptionMode === "yearly" && <YearlyPlanCardsSection selectPlan={selectPlan} />}
 
                 <section
                     // id="modeChooseBox"
@@ -97,7 +82,12 @@ const SelectPlan = () => {
 
             <div className="buttonsDiv justify-between bg-white py-4 sm:p-0">
                 <BackBtn />
-                <NextStepBtn />
+                <button
+                    className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--purple-600)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
+                    onClick={() => handleNext()}
+                >
+                    Next Step
+                </button>
             </div>
         </section>
     )
