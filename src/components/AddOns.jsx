@@ -9,6 +9,7 @@ const AddOns = () => {
 
     const handleNext = () => {
         setStepNumber(stepNumber + 1);
+        // console.log(selectedAddOns);
     }
 
     return (

@@ -12,8 +12,8 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
                 <div className="image-div arcade-image-div"></div>
                 <div className="flex flex-col gap-2">
                     <h3 className="modeName font-bold text-[var(--purple-950)]">Arcade</h3>
-                    <p className="price text-sm sm:text-[16px] text-[var(--grey-500)]">$90/yr</p>
-                    <p className="freeMonths text-xs sm:text-sm text-[var(--blue-950)]">2 months free</p>
+                    <p className="price text-[var(--grey-500)]">$90/yr</p>
+                    <p className="freeMonths text-[var(--blue-950)]">2 months free</p>
                 </div>
             </div>
             <div
@@ -24,8 +24,8 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
                 <div className="image-div advanced-image-div"></div>
                 <div className="flex flex-col gap-2">
                     <h3 className="modeName font-bold text-[var(--purple-950)]">Advanced</h3>
-                    <p className="price text-sm sm:text-[16px] text-[var(--grey-500)]">$120/yr</p>
-                    <p className="freeMonths text-xs sm:text-sm text-[var(--blue-950)]">2 months free</p>
+                    <p className="price text-[var(--grey-500)]">$120/yr</p>
+                    <p className="freeMonths text-[var(--blue-950)]">2 months free</p>
                 </div>
             </div>
             <div
@@ -36,8 +36,8 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
                 <div className="image-div pro-image-div"></div>
                 <div className="flex flex-col gap-2">
                     <h3 className="modeName font-bold text-[var(--purple-950)]">Pro</h3>
-                    <p className="price text-sm sm:text-[16px] text-[var(--grey-500)]">$150/yr</p>
-                    <p className="freeMonths text-xs sm:text-sm text-[var(--blue-950)]">2 months free</p>
+                    <p className="price text-[var(--grey-500)]">$150/yr</p>
+                    <p className="freeMonths text-[var(--blue-950)]">2 months free</p>
                 </div>
             </div>
         </section>
