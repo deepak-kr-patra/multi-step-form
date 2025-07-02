@@ -1,4 +1,10 @@
+import useAccountSetupState from "../zustand/useAccountSetupState"
+
+
 const MonthlyPlanCardsSection = ({ selectPlan }) => {
+
+    const { selectedPlanID } = useAccountSetupState();
+
     return (
         <section
             // id="planCardsSection"
@@ -6,7 +12,7 @@ const MonthlyPlanCardsSection = ({ selectPlan }) => {
         >
             <div
                 id="monthlyArcade"
-                className="planCard"
+                className={`planCard ${selectedPlanID === "monthlyArcade" ? "selectedPlanCard" : ""}`}
                 onClick={() => selectPlan('monthlyArcade')}
             >
                 <div className="image-div arcade-image-div"></div>
@@ -17,7 +23,7 @@ const MonthlyPlanCardsSection = ({ selectPlan }) => {
             </div>
             <div
                 id="monthlyAdvanced"
-                className="planCard"
+                className={`planCard ${selectedPlanID === "monthlyAdvanced" ? "selectedPlanCard" : ""}`}
                 onClick={() => selectPlan('monthlyAdvanced')}
             >
                 <div className="image-div advanced-image-div"></div>
@@ -28,7 +34,7 @@ const MonthlyPlanCardsSection = ({ selectPlan }) => {
             </div>
             <div
                 id="monthlyPro"
-                className="planCard"
+                className={`planCard ${selectedPlanID === "monthlyPro" ? "selectedPlanCard" : ""}`}
                 onClick={() => selectPlan('monthlyPro')}
             >
                 <div className="image-div pro-image-div"></div>

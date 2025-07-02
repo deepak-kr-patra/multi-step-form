@@ -4,7 +4,7 @@ import useAccountSetupState from "../zustand/useAccountSetupState"
 
 const AddOnsCardsSection = () => {
 
-    const { selectedAddOns, setSelectedAddOns } = useAccountSetupState();
+    const { subscriptionMode, selectedAddOns, setSelectedAddOns } = useAccountSetupState();
 
     const toggleAddOn = (id) => {
         setSelectedAddOns(
@@ -36,7 +36,9 @@ const AddOnsCardsSection = () => {
                         <p className="addOnCardText text-[var(--grey-500)] font-medium">Access to multiplayer games</p>
                     </div>
                     <div>
-                        <span className="addOnCardText text-[var(--purple-600)] font-medium">+$1/mo</span>
+                        <span className="addOnCardText text-[var(--purple-600)] font-medium">
+                            {subscriptionMode === "monthly" ? "+$1/mo" : "+$10/yr"}
+                        </span>
                     </div>
                 </div>
             </label>
@@ -56,7 +58,9 @@ const AddOnsCardsSection = () => {
                         <p className="addOnCardText text-[var(--grey-500)] font-medium">Extra 1TB of cloud save</p>
                     </div>
                     <div>
-                        <span className="addOnCardText text-[var(--purple-600)] font-medium">+$2/mo</span>
+                        <span className="addOnCardText text-[var(--purple-600)] font-medium">
+                            {subscriptionMode === "monthly" ? "+$2/mo" : "+$20/yr"}
+                        </span>
                     </div>
                 </div>
             </label>
@@ -76,7 +80,9 @@ const AddOnsCardsSection = () => {
                         <p className="addOnCardText text-[var(--grey-500)] font-medium">Custom theme on your profile</p>
                     </div>
                     <div>
-                        <span className="addOnCardText text-[var(--purple-600)] font-medium">+$2/mo</span>
+                        <span className="addOnCardText text-[var(--purple-600)] font-medium">
+                            {subscriptionMode === "monthly" ? "+$2/mo" : "+$20/yr"}
+                        </span>
                     </div>
                 </div>
             </label>

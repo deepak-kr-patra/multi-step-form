@@ -207,11 +207,11 @@ form label {
 }
 
 .planCard:hover,
-.selectedCard {
+.selectedPlanCard {
     border: 1px solid var(--purple-600);
 }
 
-.selectedCard {
+.selectedPlanCard {
     background-color: var(--blue-100);
 }
 
@@ -266,9 +266,14 @@ form label {
     }
 }
 
-.addOnCard:hover,
 .selectedAddOnCard {
     border: 1px solid var(--purple-600);
+}
+
+@media (hover: hover) {
+    .addOnCard:hover {
+        border: 1px solid var(--purple-600);
+    }
 }
 
 .selectedAddOnCard {

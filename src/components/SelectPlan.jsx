@@ -16,31 +16,18 @@ const SelectPlan = () => {
     } = useAccountSetupState();
 
     const toggleMode = () => {
-        let toggleButton = document.getElementById('chooseMode');
-        let monthlyMode = document.getElementById("monthlyMode");
-        let yearlyMode = document.getElementById("yearlyMode");
+        subscriptionMode === "monthly"
+            ? setSubscriptionMode("yearly")
+            : setSubscriptionMode("monthly");
 
-        if (toggleButton.checked) {
-            monthlyMode.classList.remove('chosenMode');
-            yearlyMode.classList.add('chosenMode');
-            setSubscriptionMode("yearly");
-        } else {
-            yearlyMode.classList.remove('chosenMode');
-            monthlyMode.classList.add('chosenMode');
-            setSubscriptionMode("monthly");
-        }
         setSelectedPlanID(null);
     }
 
     const selectPlan = (id) => {
-        // let planCards = document.querySelectorAll('.planCard');
-        // planCards.forEach(planCard => planCard.classList.remove('selectedCard'));
         if (selectedPlanID !== null) {
-            document.getElementById(selectedPlanID).classList.remove('selectedCard');
+            document.getElementById(selectedPlanID).classList.remove('selectedPlanCard');
         }
         setSelectedPlanID(id);
-        let selectedPlan = document.getElementById(id);
-        selectedPlan.classList.add('selectedCard');
     }
 
     const handleNext = () => {
@@ -69,14 +56,25 @@ const SelectPlan = () => {
                     // id="modeChooseBox"
                     className="w-full flex justify-center items-center p-3 gap-5 bg-[var(--blue-100)] rounded-md"
                 >
-                    <span id="monthlyMode" className="subscriptionMode chosenMode">Monthly</span>
+                    <span
+                        id="monthlyMode"
+                        className={`subscriptionMode ${subscriptionMode === "monthly" ? "chosenMode" : ""}`}
+                    >
+                        Monthly
+                    </span>
                     <input
-                        id="chooseMode"
+                        // id="chooseMode"
                         type="checkbox"
                         className="toggle scale-90 border-[var(--blue-950)] bg-white [--tglbg:var(--blue-950)] hover:bg-white"
-                        onClick={toggleMode}
+                        onChange={() => toggleMode()}
+                        checked={subscriptionMode === "yearly"}
                     />
-                    <span id="yearlyMode" className="subscriptionMode">Yearly</span>
+                    <span
+                        id="yearlyMode"
+                        className={`subscriptionMode ${subscriptionMode === "yearly" ? "chosenMode" : ""}`}
+                    >
+                        Yearly
+                    </span>
                 </section>
             </section>
 
