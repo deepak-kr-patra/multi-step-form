@@ -1,5 +1,6 @@
 import './App.css';
 import useAccountSetupState from './zustand/useAccountSetupState';
+import useScreenWidth from './zustand/useScreenWidth';
 
 import StepsBar from './components/StepsBar';
 import StepsBarMobile from './components/StepsBarMobile';
@@ -7,7 +8,7 @@ import UserForm from './components/UserForm';
 import SelectPlan from './components/SelectPlan';
 import AddOns from './components/AddOns';
 import FinishingUp from './components/FinishingUp';
-import useScreenWidth from './zustand/useScreenWidth';
+import ThankYou from './components/ThankYou';
 
 
 function App() {
@@ -22,15 +23,14 @@ function App() {
   return (
     <>
       <main id='container' className='flex flex-col justify-start items-center sm:flex-row p-0 sm:p-4 sm:pr-0 sm:bg-white'>
-        {screenWidth < 640 && <StepsBarMobile/>}
-        {screenWidth >= 640 && <StepsBar/>}
-        {/* <StepsBar />
-        <StepsBarMobile /> */}
+        {screenWidth < 640 && <StepsBarMobile />}
+        {screenWidth >= 640 && <StepsBar />}
         <section id='setupSection' className='flex justify-center items-center p-0 pb-0 lg:px-12 sm:py-2 md:py-6'>
           {stepNumber === 1 && <UserForm />}
           {stepNumber === 2 && <SelectPlan />}
           {stepNumber === 3 && <AddOns />}
           {stepNumber === 4 && <FinishingUp />}
+          {stepNumber === 5 && <ThankYou />}
         </section>
       </main>
 
