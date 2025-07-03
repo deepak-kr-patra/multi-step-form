@@ -1,10 +1,16 @@
+import useAccountSetupState from "../zustand/useAccountSetupState";
+
+
 const StepsBarMobile = () => {
+
+  const { stepNumber } = useAccountSetupState();
+
   return (
-    <section id="stepsSectionMobile" className="flex sm:hidden justify-center items-start p-6 gap-4">
-        <div className="stepNumber stepNumber1">1</div>
-        <div className="stepNumber stepNumber2">2</div>
-        <div className="stepNumber stepNumber3">3</div>
-        <div className="stepNumber stepNumber4">4</div>
+    <section id="stepsSectionMobile" className="flex justify-center items-start p-6 gap-4">
+      <div className={`stepNumber ${stepNumber === 1 ? "activeCircle" : ""}`}>1</div>
+      <div className={`stepNumber ${stepNumber === 2 ? "activeCircle" : ""}`}>2</div>
+      <div className={`stepNumber ${stepNumber === 3 ? "activeCircle" : ""}`}>3</div>
+      <div className={`stepNumber ${stepNumber === 4 ? "activeCircle" : ""}`}>4</div>
     </section>
   )
 }

@@ -5,11 +5,7 @@ import BackBtn from "./buttons/BackBtn"
 
 const AddOns = () => {
 
-    const { stepNumber, setStepNumber } = useAccountSetupState();
-
-    const handleNext = () => {
-        setStepNumber(stepNumber + 1);
-    }
+    const { setStepNumber } = useAccountSetupState();
 
     return (
         <section
@@ -28,8 +24,8 @@ const AddOns = () => {
             <div className="buttonsDiv justify-between bg-white py-4 sm:p-0">
                 <BackBtn />
                 <button
-                    className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--purple-600)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
-                    onClick={() => handleNext()}
+                    className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--blue-950-h)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
+                    onClick={() => setStepNumber(4)}
                 >
                     Next Step
                 </button>

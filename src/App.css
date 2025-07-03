@@ -301,3 +301,46 @@ form label {
         width: 20px;
     }
 }
+
+/* Selected plans and add-ons CSS */
+#plansAndAddOns {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue-100);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.planName,
+.planCost {
+    color: var(--blue-950);
+    font-weight: 700;
+}
+
+.changePlan {
+    color: var(--grey-500);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .changePlan:hover {
+        color: var(--purple-600);
+    }
+}
+
+.addOnName,
+.totalText {
+    color: var(--grey-500);
+}
+
+.addOnCost {
+    color: var(--blue-950);
+    font-weight: 500;
+}
+
+.totalCost {
+    color: var(--purple-600);
+    font-size: 18px;
+    font-weight: 700;
+}

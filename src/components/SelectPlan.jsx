@@ -7,7 +7,6 @@ import YearlyPlanCardsSection from "./YearlyPlanCardsSection";
 const SelectPlan = () => {
 
     const {
-        stepNumber,
         setStepNumber,
         subscriptionMode,
         setSubscriptionMode,
@@ -35,7 +34,7 @@ const SelectPlan = () => {
             console.log("select a plan first");
             return;
         }
-        setStepNumber(stepNumber + 1);
+        setStepNumber(3);
     }
 
     return (
@@ -54,7 +53,7 @@ const SelectPlan = () => {
 
                 <section
                     // id="modeChooseBox"
-                    className="w-full flex justify-center items-center p-3 gap-5 bg-[var(--blue-100)] rounded-md"
+                    className="w-full flex justify-center items-center p-3 gap-5 bg-[var(--blue-50)] rounded-md"
                 >
                     <span
                         id="monthlyMode"
@@ -81,7 +80,7 @@ const SelectPlan = () => {
             <div className="buttonsDiv justify-between bg-white py-4 sm:p-0">
                 <BackBtn />
                 <button
-                    className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--purple-600)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
+                    className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--blue-950-h)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
                     onClick={() => handleNext()}
                 >
                     Next Step
