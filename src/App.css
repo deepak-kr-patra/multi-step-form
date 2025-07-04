@@ -170,22 +170,9 @@ form label {
 }
 
 /* Select Plan CSS */
-.image-div {
+.planIcon {
     height: 40px;
     width: 40px;
-    background-size: cover;
-}
-
-.arcade-image-div {
-    background-image: url(/public/images/icon-arcade.svg);
-}
-
-.advanced-image-div {
-    background-image: url(/public/images/icon-advanced.svg);
-}
-
-.pro-image-div {
-    background-image: url(/public/images/icon-pro.svg);
 }
 
 .planCard {
@@ -350,12 +337,12 @@ form label {
     height: calc(100% - 104px);
 }
 
-/* .thankYouImg {
-    height: 40px;
-    height: 40px;
-    
+.thankYouImg {
+    margin-bottom: 16px;
+
     @media (max-width: 639px) {
-        height: 40px;
-        height: 40px;
+        height: 50px;
+        width: 50px;
+        margin-bottom: 12px;
     }
-} */
+}

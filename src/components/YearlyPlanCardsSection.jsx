@@ -15,7 +15,7 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
                 className={`planCard ${selectedPlanID === "yearlyArcade" ? "selectedPlanCard" : ""}`}
                 onClick={() => selectPlan('yearlyArcade')}
             >
-                <div className="image-div arcade-image-div"></div>
+                <img src="/images/icon-arcade.svg" alt="arcade icon" className="planIcon" />
                 <div className="flex flex-col gap-2">
                     <h3 className="modeName font-bold text-[var(--purple-950)]">Arcade</h3>
                     <p className="price text-[var(--grey-500)]">$90/yr</p>
@@ -27,7 +27,7 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
                 className={`planCard ${selectedPlanID === "yearlyAdvanced" ? "selectedPlanCard" : ""}`}
                 onClick={() => selectPlan('yearlyAdvanced')}
             >
-                <div className="image-div advanced-image-div"></div>
+                <img src="/images/icon-advanced.svg" alt="advanced icon" className="planIcon" />
                 <div className="flex flex-col gap-2">
                     <h3 className="modeName font-bold text-[var(--purple-950)]">Advanced</h3>
                     <p className="price text-[var(--grey-500)]">$120/yr</p>
@@ -39,7 +39,7 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
                 className={`planCard ${selectedPlanID === "yearlyPro" ? "selectedPlanCard" : ""}`}
                 onClick={() => selectPlan('yearlyPro')}
             >
-                <div className="image-div pro-image-div"></div>
+                <img src="/images/icon-pro.svg" alt="pro icon" className="planIcon" />
                 <div className="flex flex-col gap-2">
                     <h3 className="modeName font-bold text-[var(--purple-950)]">Pro</h3>
                     <p className="price text-[var(--grey-500)]">$150/yr</p>
