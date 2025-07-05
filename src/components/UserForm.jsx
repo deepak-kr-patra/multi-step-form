@@ -1,14 +1,9 @@
-import { useState } from "react"
 import useAccountSetupState from "../zustand/useAccountSetupState";
 
 
 const UserForm = () => {
 
-    const { setStepNumber } = useAccountSetupState();
-
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [mobileNumber, setMobileNumber] = useState("");
+    const { setStepNumber, userDetails, setUserDetails } = useAccountSetupState();
 
     const displayWarning = (inputId, labelId) => {
         let input = document.getElementById(inputId);
@@ -26,15 +21,15 @@ const UserForm = () => {
         document.getElementById("mobileNumber").classList.remove("showRedBorder");
         document.getElementById("warningMobileNum").classList.remove("showWarning");
 
-        if (name === "") {
+        if (userDetails.name === "") {
             displayWarning("name", "warningName");
             return;
         }
-        if (email === "") {
+        if (userDetails.email === "") {
             displayWarning("email", "warningEmail");
             return;
         }
-        if (mobileNumber === "") {
+        if (userDetails.mobileNumber === "") {
             displayWarning("mobileNumber", "warningMobileNum");
             return;
         }
@@ -43,7 +38,7 @@ const UserForm = () => {
 
     return (
         <form
-            // action={handleNext}
+            action={() => handleNext()}
             className="relative w-full h-full flex flex-col justify-between sm:px-3 lg:px-16"
         >
             <section className="liftedElement gap-4 sm:gap-6 px-6 py-8 sm:p-0 bg-white">
@@ -60,11 +55,10 @@ const UserForm = () => {
                     <input
                         type="text"
                         id="name"
-                        // required
                         placeholder="e.g. Stephen King"
                         className="personalInfoInput p-2 md:px-4 md:py-3 text-sm md:text-md lg:text-lg"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={userDetails.name}
+                        onChange={(e) => setUserDetails({ ...userDetails, name: e.target.value })}
                     />
                 </div>
 
@@ -76,11 +70,10 @@ const UserForm = () => {
                     <input
                         type="email"
                         id="email"
-                        // required
                         placeholder="e.g. stephenking@lorem.com"
                         className="personalInfoInput p-2 md:px-4 md:py-3 text-sm md:text-md lg:text-lg"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={userDetails.email}
+                        onChange={(e) => setUserDetails({ ...userDetails, email: e.target.value })}
                     />
                 </div>
 
@@ -92,23 +85,20 @@ const UserForm = () => {
                     <input
                         type="tel"
                         id="mobileNumber"
-                        // required
                         placeholder="e.g. +1 234 567 890"
                         className="personalInfoInput p-2 md:px-4 md:py-3 text-sm md:text-md lg:text-lg"
-                        value={mobileNumber}
-                        onChange={(e) => setMobileNumber(e.target.value)}
+                        value={userDetails.mobileNumber}
+                        onChange={(e) => setUserDetails({ ...userDetails, mobileNumber: e.target.value })}
                     />
                 </div>
             </section>
 
             <div className="buttonsDiv justify-end bg-white py-4 sm:p-0">
-                <button
-                    // type="submit"
+                <input
+                    type="submit"
                     className="min-h-10 h-max bg-[var(--blue-950)] hover:bg-[var(--blue-950-h)] text-[var(--blue-200)] font-medium px-4 sm:py-3 sm:px-6 rounded-md cursor-pointer"
-                    onClick={() => handleNext()}
-                >
-                    Next Step
-                </button>
+                    value={"Next Step"}
+                />
             </div>
         </form>
     )

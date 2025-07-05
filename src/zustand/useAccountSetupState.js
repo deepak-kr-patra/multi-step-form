@@ -1,8 +1,14 @@
 import { create } from 'zustand'
 
 const useAccountSetupState = create((set) => ({
-    stepNumber: 3,
+    stepNumber: 1,
     setStepNumber: (stepNumber) => set({ stepNumber }),
+    userDetails: {
+        name: "",
+        email: "",
+        mobileNumber: ""
+    },
+    setUserDetails: (userDetails) => set({ userDetails }),
     subscriptionMode: "monthly",
     setSubscriptionMode: (subscriptionMode) => set({ subscriptionMode }),
     selectedPlanID: null,

@@ -29,7 +29,7 @@ const StepsBar = () => {
                 </div>
             </div>
             <div className="step">
-                <div className={`stepNumber ${stepNumber === 4 ? "activeCircle" : ""}`}>4</div>
+                <div className={`stepNumber ${stepNumber === 4 || stepNumber === 5 ? "activeCircle" : ""}`}>4</div>
                 <div>
                     <p className='text-xs'>STEP 4</p>
                     <h3 className='font-bold text-white'>SUMMARY</h3>

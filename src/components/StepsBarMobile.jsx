@@ -10,7 +10,7 @@ const StepsBarMobile = () => {
       <div className={`stepNumber ${stepNumber === 1 ? "activeCircle" : ""}`}>1</div>
       <div className={`stepNumber ${stepNumber === 2 ? "activeCircle" : ""}`}>2</div>
       <div className={`stepNumber ${stepNumber === 3 ? "activeCircle" : ""}`}>3</div>
-      <div className={`stepNumber ${stepNumber === 4 ? "activeCircle" : ""}`}>4</div>
+      <div className={`stepNumber ${stepNumber === 4 || stepNumber === 5 ? "activeCircle" : ""}`}>4</div>
     </section>
   )
 }
