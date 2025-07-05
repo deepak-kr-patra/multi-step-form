@@ -44,7 +44,7 @@
     border: 2px solid var(--blue-200);
     border-radius: 50%;
     color: var(--white);
-    font-weight: 500;
+    font-family: ubuntuMedium;
 
     @media (max-width: 768px) {
         height: 32px;
@@ -107,7 +107,7 @@
 
 .stepHeading {
     color: var(--blue-950);
-    font-weight: 700;
+    font-family: ubuntuBold;
 }
 
 .stepText {
@@ -129,7 +129,7 @@
 .personalInfoInput {
     border: 2px solid var(--purple-200);
     color: var(--blue-950);
-    font-weight: 700;
+    font-family: ubuntuBold;
     border-radius: 6px;
 
     @media (max-width: 639px) {
@@ -151,13 +151,13 @@
 }
 
 .personalInfoInput::placeholder {
-    font-weight: 500;
+    font-family: ubuntuMedium;
 }
 
 form label {
     color: var(--blue-950);
     font-size: 14px;
-    font-weight: 500;
+    font-family: ubuntuMedium;
 
     @media (min-width: 748px) {
         font-size: 16px;
@@ -233,7 +233,7 @@ form label {
 
 .subscriptionMode {
     color: var(--grey-500);
-    font-weight: 500;
+    font-family: ubuntuMedium;
 }
 
 .chosenMode {
@@ -285,14 +285,23 @@ form label {
 
 .addOnCheckBox {
     accent-color: var(--purple-600);
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--grey-500);
+    border-radius: 3px;
     cursor: pointer;
 
     @media (max-width: 639px) {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
     }
+}
+
+.selectedAddOnCard .addOnCheckBox {
+    background: var(--purple-600) url(/public/images/icon-checkmark.svg);
+    background-repeat: no-repeat;
+    background-position: calc(50%) calc(55%);
+    border: none;
 }
 
 /* Selected plans and add-ons CSS */
@@ -307,7 +316,7 @@ form label {
 .planName,
 .planCost {
     color: var(--blue-950);
-    font-weight: 700;
+    font-family: ubuntuBold;
 }
 
 .changePlan {
@@ -329,13 +338,13 @@ form label {
 
 .addOnCost {
     color: var(--blue-950);
-    font-weight: 500;
+    font-family: ubuntuMedium;
 }
 
 .totalCost {
     color: var(--purple-600);
     font-size: 18px;
-    font-weight: 700;
+    font-family: ubuntuBold;
 }
 
 /* Thank You section CSS */

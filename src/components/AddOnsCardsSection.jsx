@@ -23,13 +23,9 @@ const AddOnsCardsSection = () => {
             <label
                 id="onlineService"
                 className={`addOnCard ${selectedAddOns.includes('onlineService') ? 'selectedAddOnCard' : ''}`}
+                onClick={() => toggleAddOn('onlineService')}
             >
-                <input
-                    type="checkbox"
-                    className="addOnCheckBox"
-                    checked={selectedAddOns.includes('onlineService')}
-                    onChange={() => toggleAddOn('onlineService')}
-                />
+                <div className="addOnCheckBox" />
                 <div className="w-full flex justify-between items-center">
                     <div className="flex flex-col gap-1">
                         <h3 className="addOnCardText text-[var(--blue-950)] font-bold">Online service</h3>
@@ -45,13 +41,9 @@ const AddOnsCardsSection = () => {
             <label
                 id="largerStorage"
                 className={`addOnCard ${selectedAddOns.includes('largerStorage') ? 'selectedAddOnCard' : ''}`}
+                onClick={() => toggleAddOn('largerStorage')}
             >
-                <input
-                    type="checkbox"
-                    className="addOnCheckBox"
-                    checked={selectedAddOns.includes('largerStorage')}
-                    onChange={() => toggleAddOn('largerStorage')}
-                />
+                <div className="addOnCheckBox" />
                 <div className="w-full flex justify-between items-center">
                     <div className="flex flex-col gap-1">
                         <h3 className="addOnCardText text-[var(--blue-950)] font-bold">Larger storage</h3>
@@ -67,13 +59,9 @@ const AddOnsCardsSection = () => {
             <label
                 id="customizableProfile"
                 className={`addOnCard ${selectedAddOns.includes('customizableProfile') ? 'selectedAddOnCard' : ''}`}
+                onClick={() => toggleAddOn('customizableProfile')}
             >
-                <input
-                    type="checkbox"
-                    className="addOnCheckBox"
-                    checked={selectedAddOns.includes('customizableProfile')}
-                    onChange={() => toggleAddOn('customizableProfile')}
-                />
+                <div className="addOnCheckBox" />
                 <div className="w-full flex justify-between items-center">
                     <div className="flex flex-col gap-1">
                         <h3 className="addOnCardText text-[var(--blue-950)] font-bold">Customizable profile</h3>
