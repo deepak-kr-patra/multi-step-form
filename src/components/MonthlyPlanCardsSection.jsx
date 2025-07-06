@@ -6,10 +6,7 @@ const MonthlyPlanCardsSection = () => {
     const { selectedPlanID, setSelectedPlanID } = useAccountSetupState();
 
     return (
-        <section
-            // id="planCardsSection"
-            className="flex flex-col sm:flex-row justify-between gap-3 md:gap-4"
-        >
+        <section className="flex flex-col sm:flex-row justify-between gap-3 md:gap-4"        >
             <div
                 id="monthlyArcade"
                 className={`planCard ${selectedPlanID === "monthlyArcade" ? "selectedPlanCard" : ""}`}
