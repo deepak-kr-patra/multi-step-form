@@ -51,10 +51,7 @@ const SelectPlan = () => {
                 {subscriptionMode === "monthly" && <MonthlyPlanCardsSection selectPlan={selectPlan} />}
                 {subscriptionMode === "yearly" && <YearlyPlanCardsSection selectPlan={selectPlan} />}
 
-                <section
-                    // id="modeChooseBox"
-                    className="w-full flex justify-center items-center p-3 gap-5 bg-[var(--blue-50)] rounded-md"
-                >
+                <section className="w-full flex justify-center items-center p-3 gap-4 bg-[var(--blue-50)] rounded-md">
                     <span
                         id="monthlyMode"
                         className={`subscriptionMode ${subscriptionMode === "monthly" ? "chosenMode" : ""}`}
@@ -62,9 +59,8 @@ const SelectPlan = () => {
                         Monthly
                     </span>
                     <input
-                        // id="chooseMode"
                         type="checkbox"
-                        className="toggle scale-90 border-[var(--blue-950)] bg-white [--tglbg:var(--blue-950)] hover:bg-white"
+                        className="toggle scale-75 md:scale-90 border-[var(--blue-950)] bg-white [--tglbg:var(--blue-950)] hover:bg-white"
                         onChange={() => toggleMode()}
                         checked={subscriptionMode === "yearly"}
                     />

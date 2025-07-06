@@ -6,7 +6,7 @@
     border-radius: 12px;
 
     @media (max-width: 639px) {
-        height: 100vh;
+        height: 100dvh;
         width: 100vw;
         border-radius: 0;
     }
@@ -177,13 +177,18 @@ form label {
 .planIcon {
     height: 40px;
     width: 40px;
+
+    @media (max-width: 639px) {
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .planCard {
     display: flex;
     border: 1px solid var(--purple-200);
     border-radius: 6px;
-    padding: 14px;
+    padding: 12px;
     gap: 10px;
     transition: all 0.2s ease-out;
     cursor: pointer;
@@ -208,12 +213,20 @@ form label {
 }
 
 .modeName {
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 12px;
+    font-family: ubuntuBold;
+
+    @media (min-width: 640px) {
+        font-size: 16px;
+        line-height: 16px;
+    }
 }
 
 .price {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: 12px;
+    font-family: ubuntuMedium;
 
     @media (min-width: 640px) {
         font-size: 16px;
@@ -222,8 +235,8 @@ form label {
 }
 
 .freeMonths {
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 10px;
+    line-height: 10px;
 
     @media (min-width: 640px) {
         font-size: 14px;
@@ -234,6 +247,11 @@ form label {
 .subscriptionMode {
     color: var(--grey-500);
     font-family: ubuntuMedium;
+    font-size: 12px;
+
+    @media (min-width: 640px) {
+        font-size: 16px;
+    }
 }
 
 .chosenMode {
