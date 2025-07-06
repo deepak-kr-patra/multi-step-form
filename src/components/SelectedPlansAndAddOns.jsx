@@ -22,7 +22,7 @@ const SelectedPlansAndAddOns = () => {
 
                 {selectedAddOns.length > 0 && <div className="divider"></div>}
 
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 sm:gap-5">
                     {selectedAddOns.map((selectedAddOn, idx) => {
                         let addOnDetails = getAddOnDetails(selectedAddOn, subscriptionMode);
                         return <div className="flex justify-between items-center" key={idx}>

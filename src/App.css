@@ -332,6 +332,21 @@ form label {
 }
 
 .planName,
+.changePlan,
+.planCost,
+.addOnName,
+.addOnCost,
+.totalText {
+    font-size: 14px;
+    line-height: 14px;
+
+    @media (min-width: 640px) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.planName,
 .planCost {
     color: var(--blue-950);
     font-family: ubuntuBold;
@@ -349,6 +364,13 @@ form label {
     }
 }
 
+.divider {
+    @media (max-width: 639px) {
+        margin-top: 6px;
+        margin-bottom: 12px;
+    }
+}
+
 .addOnName,
 .totalText {
     color: var(--grey-500);
@@ -361,8 +383,12 @@ form label {
 
 .totalCost {
     color: var(--purple-600);
-    font-size: 18px;
+    font-size: 22px;
     font-family: ubuntuBold;
+
+    @media (max-width: 639px) {
+        font-size: 17px;
+    }
 }
 
 /* Thank You section CSS */
