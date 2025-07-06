@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import useAccountSetupState from "../zustand/useAccountSetupState";
 import BackBtn from "./buttons/BackBtn"
 import MonthlyPlanCardsSection from "./MonthlyPlanCardsSection";
@@ -22,16 +23,9 @@ const SelectPlan = () => {
         setSelectedPlanID(null);
     }
 
-    const selectPlan = (id) => {
-        if (selectedPlanID !== null) {
-            document.getElementById(selectedPlanID).classList.remove('selectedPlanCard');
-        }
-        setSelectedPlanID(id);
-    }
-
     const handleNext = () => {
         if (selectedPlanID === null) {
-            console.log("select a plan first");
+            toast.error('Select a plan first.')
             return;
         }
         setStepNumber(3);
@@ -48,8 +42,8 @@ const SelectPlan = () => {
                     <p className="stepText">You have the option of monthly or yearly billing.</p>
                 </div>
 
-                {subscriptionMode === "monthly" && <MonthlyPlanCardsSection selectPlan={selectPlan} />}
-                {subscriptionMode === "yearly" && <YearlyPlanCardsSection selectPlan={selectPlan} />}
+                {subscriptionMode === "monthly" && <MonthlyPlanCardsSection />}
+                {subscriptionMode === "yearly" && <YearlyPlanCardsSection />}
 
                 <section className="w-full flex justify-center items-center p-3 gap-4 bg-[var(--blue-50)] rounded-md">
                     <span

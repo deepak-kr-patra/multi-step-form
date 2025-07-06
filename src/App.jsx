@@ -9,6 +9,7 @@ import SelectPlan from './components/SelectPlan';
 import AddOns from './components/AddOns';
 import FinishingUp from './components/FinishingUp';
 import ThankYou from './components/ThankYou';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           {stepNumber === 4 && <FinishingUp />}
           {stepNumber === 5 && <ThankYou />}
         </section>
+        <Toaster toastOptions={{ duration: 2500 }} />
       </main>
 
       {/* <div class="attribution">

@@ -1,9 +1,9 @@
 import useAccountSetupState from "../zustand/useAccountSetupState"
 
 
-const YearlyPlanCardsSection = ({ selectPlan }) => {
+const YearlyPlanCardsSection = () => {
 
-    const { selectedPlanID } = useAccountSetupState();
+    const { selectedPlanID, setSelectedPlanID } = useAccountSetupState();
 
     return (
         <section
@@ -13,7 +13,7 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
             <div
                 id="yearlyArcade"
                 className={`planCard ${selectedPlanID === "yearlyArcade" ? "selectedPlanCard" : ""}`}
-                onClick={() => selectPlan('yearlyArcade')}
+                onClick={() => setSelectedPlanID('yearlyArcade')}
             >
                 <img src="/images/icon-arcade.svg" alt="arcade icon" className="planIcon" />
                 <div className="flex flex-col gap-1.5">
@@ -25,7 +25,7 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
             <div
                 id="yearlyAdvanced"
                 className={`planCard ${selectedPlanID === "yearlyAdvanced" ? "selectedPlanCard" : ""}`}
-                onClick={() => selectPlan('yearlyAdvanced')}
+                onClick={() => setSelectedPlanID('yearlyAdvanced')}
             >
                 <img src="/images/icon-advanced.svg" alt="advanced icon" className="planIcon" />
                 <div className="flex flex-col gap-1.5">
@@ -37,7 +37,7 @@ const YearlyPlanCardsSection = ({ selectPlan }) => {
             <div
                 id="yearlyPro"
                 className={`planCard ${selectedPlanID === "yearlyPro" ? "selectedPlanCard" : ""}`}
-                onClick={() => selectPlan('yearlyPro')}
+                onClick={() => setSelectedPlanID('yearlyPro')}
             >
                 <img src="/images/icon-pro.svg" alt="pro icon" className="planIcon" />
                 <div className="flex flex-col gap-1.5">
